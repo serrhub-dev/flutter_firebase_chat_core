@@ -336,6 +336,7 @@ class FirebaseChatCore {
   /// does nothing.
   void sendMessage(dynamic partialMessage, String roomId) async {
     if (firebaseUser == null) return;
+    print(partialMessage);
 
     types.Message? message;
 
