@@ -99,6 +99,7 @@ class FirebaseChatCore {
   /// custom data.
   Future<types.Room> createRoom(
     types.User otherUser, {
+    String? name,
     Map<String, dynamic>? metadata,
   }) async {
     final fu = firebaseUser;
@@ -166,7 +167,7 @@ class FirebaseChatCore {
       'createdAt': FieldValue.serverTimestamp(),
       'imageUrl': null,
       'metadata': metadata,
-      'name': null,
+      'name': name,
       'type': types.RoomType.direct.toShortString(),
       'updatedAt': FieldValue.serverTimestamp(),
       'userIds': userIds,
