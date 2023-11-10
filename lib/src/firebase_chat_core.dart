@@ -179,6 +179,7 @@ class FirebaseChatCore {
       metadata: metadata,
       type: types.RoomType.direct,
       users: users,
+      name: name,
     );
   }
 
