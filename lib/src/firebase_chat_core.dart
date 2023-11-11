@@ -336,7 +336,7 @@ class FirebaseChatCore {
   /// Sends a message to the Firestore. Accepts any partial message and a
   /// room ID. If arbitraty data is provided in the [partialMessage]
   /// does nothing.
-  void sendMessage(dynamic partialMessage, String roomId) async {
+  Future<void> sendMessage(dynamic partialMessage, String roomId) async {
     if (firebaseUser == null) return;
 
     types.Message? message;
@@ -406,7 +406,7 @@ class FirebaseChatCore {
 
   /// Updates a room in the Firestore. Accepts any room.
   /// Room will probably be taken from the [rooms] stream.
-  void updateRoom(types.Room room) async {
+  Future<void> updateRoom(types.Room room) async {
     if (firebaseUser == null) return;
 
     final roomMap = room.toJson();
