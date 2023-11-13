@@ -346,24 +346,28 @@ class FirebaseChatCore {
         author: types.User(id: firebaseUser!.uid),
         id: '',
         partialCustom: partialMessage,
+        createdAt: DateTime.now().millisecondsSinceEpoch,
       );
     } else if (partialMessage is types.PartialFile) {
       message = types.FileMessage.fromPartial(
         author: types.User(id: firebaseUser!.uid),
         id: '',
         partialFile: partialMessage,
+        createdAt: DateTime.now().millisecondsSinceEpoch,
       );
     } else if (partialMessage is types.PartialImage) {
       message = types.ImageMessage.fromPartial(
         author: types.User(id: firebaseUser!.uid),
         id: '',
         partialImage: partialMessage,
+        createdAt: DateTime.now().millisecondsSinceEpoch,
       );
     } else if (partialMessage is types.PartialText) {
       message = types.TextMessage.fromPartial(
         author: types.User(id: firebaseUser!.uid),
         id: '',
         partialText: partialMessage,
+        createdAt: DateTime.now().millisecondsSinceEpoch,
       );
     }
 
